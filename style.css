@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.display{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: palegoldenrod;
+}
+.iphone{
+    width: 250px;
+    height: 500px;
+    border: 5px solid black;
+    border-radius: 35px;
+    overflow: hidden;
+    position: relative;
+    -webkit-box-reflect: below 25px linear-gradient(transparent , rgba(255, 0, 0, 0.527));
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+   /* background: red; */
+    position: absolute;
+    top: 0;
+    transition: 0.5s;
+    left: 0;
+}
+
+.iphone:hover .overlay{
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.dynamic{
+    width: 30%;
+    height: 18px;
+    background-color: black;
+    position: absolute;
+    top: 10px;
+    border-radius: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+
+
+}
+.iphone:hover .dynamic{
+    animation: big-bar 2s 1s ease-in-out;
+}
+.profile{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: white;
+    visibility: hidden;
+    opacity: 0;
+    
+}
+.iphone:hover .dynamic .profile{
+    animation: content 1.9s 1.1s ease-in-out;
+}
+.profile img{
+    object-fit: cover;
+}
+.profile-name{
+    position: absolute;
+    left: 47px;
+    font-size: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    visibility: hidden;
+    opacity: 0;
+}
+.iphone:hover .dynamic .profile-name{
+    animation: content 1.9s 1.1s ease-in-out;
+}
+.call-attend{
+    position: absolute;
+    right: 3px;
+    width: 37px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(80, 180, 30);
+    top: 50%;
+    transform: translateY(-50%);
+    display: grid;
+    place-content: center;
+    visibility: hidden;
+    opacity: 0;
+}
+.iphone:hover .dynamic .call-attend{
+    animation: content 1.9s 1.1s ease-in-out;
+}
+.call-hangup {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 42px;
+    color: red;
+    z-index: 999;
+    font-size: 37px;
+    visibility: hidden;
+    opacity: 0;
+   
+    
+}
+.iphone:hover .dynamic .call-hangup{
+    animation: content 1.9s 1.1s ease-in-out;
+}
+.call-hangup::before{
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 2px;
+    z-index: -888;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+} 
+.call-attend i{
+    text-align: center;
+    font-size: 18px;
+    color: white;
+}
+@keyframes big-bar {
+    0%,100%{
+        width: 30%;
+        height: 18px;
+    }
+    50%{
+        width: 90%;
+        height: 45px;
+    }
+    75%{
+        width: 90%;
+        height: 45px;
+    }
+    90%{
+        width: 90%;
+        height: 45px;
+    }
+}
+@keyframes content {
+    0%,100%{
+        visibility: hidden;
+        opacity: 0;
+    }
+    75%{
+        visibility: visible;
+        opacity: 1;
+    }
+    90%{
+        opacity: 0;
+    }
+}
